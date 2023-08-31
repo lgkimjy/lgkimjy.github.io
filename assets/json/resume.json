@@ -1,12 +1,10 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "a Einstein",
+    "label": "Humanoid Researcher",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "lgkimjy@hanyang.ac.kr",
+    "phone": "+(82) 10-9560-2720",
     "location": {
       "address": "2712 Broadway St",
       "postalCode": "CA 94115",
@@ -71,7 +69,16 @@
       "fluency": "Fluent"
     }
   ],
-  "interests": [],
+  "interests": [
+    {
+      "language": "German",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    }
+  ],
   "references": [],
   "projects": []
 }
