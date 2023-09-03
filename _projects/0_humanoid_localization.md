@@ -77,9 +77,9 @@ Augmented MCL estimates the robot’s position through a recursive prediction an
 ### Real-World Experiments
 <div class="row justify-content-sm-center">
     <div class="col-sm-12 mt-3 mt-md-0">
-        {% include video.html path="https://www.youtube.com/watch?v=R78u-vm5boU" class="img-fluid rounded z-depth-1"%}
+        {% include figure.html path="assets/img/humanoid_localization/real-world.png" title="example image" class="img-fluid rounded z-depth-1"  zoomable=true%}
         <div class="caption">
-            Real-World localization in fully autonomous robot plays Soccer.
+            Real-World localization in fully autonomous robot plays Soccer. <a href="https://www.youtube.com/watch?v=R78u-vm5boU">(video)</a>
         </div>
     </div>
 </div>
