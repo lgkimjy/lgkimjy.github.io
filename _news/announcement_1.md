@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Joined **[Humanoid Robotics Lab]()**. at KIST.
+Joined **[Humanoid Robotics Lab.]()** @ KIST.
