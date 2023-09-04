@@ -6,7 +6,7 @@ subtitle:
 
 profile:
   align: right
-  image: profile2.jpg
+  image: profile3.png
   image_circular: false # crops the image to make it circular
   address: 
 
@@ -20,7 +20,7 @@ social: false  # includes social icons at the bottom of the page
 
 I'm currently a Research Intern at the [Humanoid Robotics Lab.]() at the Korea Institute of Science and Technology (KIST), working under Dr. [Yonghwan Oh](). My main focus is on legged locomotion, particularly in the control and dynamic movement of humanoid robots.
 
-I earned my Master's Degree in 2022 from Hanyang University, guided by Prof. [JeaKweon Han](). Before that, I completed my B.S. in Robotics at Hanyang University's ERICA campus in 2020.
+I earned my Master's Degree in 2022 from Hanyang University, guided by Prof. [JeaKweon Han](). Before that, I completed my B.S. in Robotics at Hanyang University ERICA in 2020.
 
 <!-- I have always been captivated by the potential of humanoid robots, particularly in the realms of control and dynamic locomotion. My journey in this fascinating field began at Hanyang University ERICA, where I earned both my Bachelor's and Master's degrees. During my Master's program, I was fortunate to be guided by Prof. JeaKweon Han, and my research was primarily focused on humanoid perception.
 

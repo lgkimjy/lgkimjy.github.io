@@ -17,8 +17,8 @@ Proposes an estimation of a 1.3m tall humanoid robot’s position with an develo
 * Develop Augmented Monte-Carlo Localization.
 * Landmark extraction using CNN-based Object Detection Model.
 * Enhancing Data Association method using Hungarian algorithm.
-* Make it possible to estimate own position in real-time.
-* Enable re-estimation of position after events like "falling" or "kidnapping" due to collisions.
+* Estimation in real-time.
+* Enable re-estimation after events such as "falling" or "kidnapping" due to collisions.
 
 ---
 
