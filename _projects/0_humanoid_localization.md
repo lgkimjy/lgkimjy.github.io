@@ -8,7 +8,10 @@ category: robotics
 ---
 
 ### Introduction
+<img align="right" width="38%" src="../../assets/img/humanoid_localization/robots_3.png">
+
 The robot’s [decision-making]() is an essential component of the autonomous robot. To fulfil this component, the [accurate position estimation of the robot]() is a fundamental prerequisite. Localization determines the robot’s relative position within the map environment, and existing mobile robots have been extensively studied. However, localization is still [challenging]() to humanoids because the bipeds’ movement is not as stable as mobile robots, and camera view frames oscillate from side to side. Developing [localization]() with high accuracy under the above-limited constraints is necessary. 
+<br/><br/>
 
 ---
 
@@ -25,12 +28,12 @@ Proposes an estimation of a 1.3m tall humanoid robot’s position with an develo
 ### Methods
 Augmented MCL estimates the robot’s position through a recursive prediction and correction process. It uses particle samples scattered in the environment, which are updated based on the sample [motion model]() and measured for their likelihood using the [measurement model](). Samples with low similarity will be discarded during [resampling](), and high- weighted particles will be reassigned for the next prediction step. Also, aMCL will track the [long-term]() and [short-term average weight]() to survive the kidnap problem.
 
-1. Constructing a **[motion model]()** for prediction ( ZMP trajectory )
-2. Creating a **[sensor model]()** for estimation ( Deep learning-based object detection )
-3. **[Data Association]()** between keypoints and landmarks ( Hungarian method )
-4. Particle sample **[weights calculation]()** ( Multi-variant Gaussian function )
-5. **[Resampling]()** for the next prediction ( Roulette Wheel )
-6. **[Tracking short-]()** and **[long-term weights]()** for adressing Kidnap problem
+1. Constructing a [motion model]() for prediction ( ZMP trajectory )
+2. Creating a [sensor model]() for estimation ( Deep learning-based object detection )
+3. [Data Association]() between keypoints and landmarks ( Hungarian method )
+4. Particle sample [weights calculation]() ( Multi-variant Gaussian function )
+5. [Resampling]() for the next prediction ( Roulette Wheel )
+6. [Tracking short-]() and [long-term weights]() for adressing Kidnap problem
 
 <div class="row justify-content-center">
     <div class="col-sm-8 mt-md-0">
@@ -79,7 +82,7 @@ Augmented MCL estimates the robot’s position through a recursive prediction an
     <div class="col-sm-12 mt-3 mt-md-0">
         {% include figure.html path="assets/img/humanoid_localization/real-world.png" title="example image" class="img-fluid rounded z-depth-1"  zoomable=true%}
         <div class="caption">
-            Real-World localization in fully autonomous robot plays Soccer. <a href="https://www.youtube.com/watch?v=R78u-vm5boU">(video)</a>
+            Real-World localization in fully autonomous robot plays Soccer. <a href="https://www.youtube.com/watch?v=R78u-vm5boU"><b>(video)</b></a>
         </div>
     </div>
 </div>
