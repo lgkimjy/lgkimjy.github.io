@@ -33,6 +33,10 @@
   - firstname: ["Max"]
     url: https://en.wikipedia.org/wiki/Max_Planck
 
-"AH":
-  - first_name: ["AH"]
-    url: naver.com
+"Han":
+  - firstname: ["JeaKweon"]
+    url: https://sites.google.com/site/heroehslab/home?authuser=0
+
+"Kang":
+  - firstname: ["MinSung"]
+    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
