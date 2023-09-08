@@ -63,20 +63,32 @@ category: robotics
 ## Experiment Configurations
 ### Configuration 1
 <div class="row justify-content-center">
-    <div class="col-sm-6 mt-md-0">
-        {% include figure.html path="assets/img/balloon_drone/scene2.png" title="example image" class="img-fluid rounded z-depth-1"  zoomable=true%}
+    <div style="width: 270px; margin-right: 10px">
+            {% include figure.html path="assets/img/balloon_drone/scene2.png" title="example image" class="img-fluid rounded z-depth-1"  zoomable=true%}
         <div class="caption">
-            Experimental environment configuration.
+                Experimental environment configuration.
+        </div>
+    </div>
+    <div style="width: 480px;">
+            {% include figure.html path="assets/img/balloon_drone/scene2_output.png" title="example image" class="img-fluid rounded z-depth-1"  zoomable=true%}
+        <div class="caption">
+            Raw Output of tag.
         </div>
     </div>
 </div>
 
 ### Configuration 2
 <div class="row justify-content-center">
-    <div class="col-sm-6 mt-md-0">
-        {% include figure.html path="assets/img/balloon_drone/scene1.png" title="example image" class="img-fluid rounded z-depth-1"  zoomable=true%}
+    <div style="width: 335px; margin-right: 10px">
+            {% include figure.html path="assets/img/balloon_drone/scene1.png" title="example image" class="img-fluid rounded z-depth-1"  zoomable=true%}
         <div class="caption">
-            Experimental environment configuration.
+                Experimental environment configuration.
+        </div>
+    </div>
+    <div style="width: 415px;">
+            {% include figure.html path="assets/img/balloon_drone/scene1.gif" title="example image" class="img-fluid rounded z-depth-1"  zoomable=true%}
+        <div class="caption">
+            Filtered output of tag position (z, x, y)
         </div>
     </div>
 </div>
@@ -84,10 +96,31 @@ category: robotics
 ---
 
 ## Implementation for Swarm Control
-* djakldfj
+<div class="row justify-content-center">
+    <div class="col-sm-12 mt-md-0">
+        {% include figure.html path="assets/img/balloon_drone/experiment.png" title="example image" class="img-fluid rounded z-depth-1"  zoomable=true%}
+        <div class="caption">
+            Experimental environment configuration.
+        </div>
+    </div>
+</div>
+
 
 ---
 
 ## Balloon-type drone Implementation
+<div class="row justify-content-center">
+    <div class="col-sm-12 mt-md-0">
+        {% include figure.html path="assets/img/balloon_drone/experiment.png" title="example image" class="img-fluid rounded z-depth-1"  zoomable=true%}
+        <div class="caption">
+            Experimental environment configuration.
+        </div>
+    </div>
+</div>
 
-
+<div class="row justify-content-center">
+        <iframe width="750" height="422" src="https://www.youtube.com/embed/zE13b-hOavc?si=koWjrzdgcxyfvcPq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="caption">
+            Real-time positioning result, communication via MQTT network.
+        </div>
+</div>

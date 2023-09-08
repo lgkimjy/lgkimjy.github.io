@@ -5,6 +5,6 @@ description: Development of Cooperative robot concept mobile platform to interac
 img: assets/img/mecanum/mecanum.gif
 importance: 4
 category: robotics
-# related_publications: einstein1956investigations, einstein1950meaning
+# related_publications: kollmitz2018whole
 ---
 
