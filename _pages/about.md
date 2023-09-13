@@ -6,27 +6,31 @@ subtitle:
 
 profile:
   align: right
-  image: profile/profile3.png
+  image: profile/profile.png
   image_circular: false # crops the image to make it circular
   address: 
 
 news: true  # includes a list of news items
 latest_posts: false  # includes a list of the newest posts
 selected_papers: false # includes a list of papers marked as "selected={true}"
-social: false  # includes social icons at the bottom of the page
+social: true  # includes social icons at the bottom of the page
 ---
 
 <!-- Currently I am a Research Intern at [Humanoid Robotics Lab](https://sites.google.com/view/humanoids-kist/Home). at Korea Korea Institute of Science and Technology with the support of Dr. [Yonghwan Oh](https://scholar.google.com/citations?user=hEnok94AAAAJ&hl=ko&oi=ao). My primary research interest lies in legged locomotion, focusing on humanoid robot control and dynamic locomotion. Also, I am interested in robot localization and vision-based robot perception, which enable robots to move autonomously. -->
 
-I'm currently a Research Intern at the [Humanoid Robotics Lab.]() at the Korea Institute of Science and Technology (KIST), working under Dr. [Yonghwan Oh](). My main focus is on legged locomotion, particularly in the control and dynamic movement of humanoid robots.
+I am interested in legged robots, particularly in humanoid robots' whole-body control and dynamic locomotion planning. 
 
-I earned my Master's Degree in 2022 from Hanyang University, guided by Prof. [JeaKweon Han](). Before that, I completed my B.S. in Robotics at Hanyang University ERICA in 2020.
+I'm currently a full-time research intern at the <font color='ff7e55'>Humanoid Robotics Lab.</font> at the Korea Institute of Science and Technology (KIST), working under Dr. [Yonghwan Oh](https://scholar.google.com/citations?user=hEnok94AAAAJ&hl=ko&oi=ao). My current research is centered on the control and locomotion of wheel-legged humanoid robots. The aim is to develop robots that not only mimic human movement but also adapt to various terrains and situations, thereby expanding their utility in real-world applications.
+
+I earned my Master's Degree in 2022 from Hanyang University, under guidance by Prof. [JeaKweon Han](https://sites.google.com/site/heroehslab/home?authuser=0). Before that, I completed my B.S. in Robotics at Hanyang University ERICA in 2020.
 
 <!-- I have always been captivated by the potential of humanoid robots, particularly in the realms of control and dynamic locomotion. My journey in this fascinating field began at Hanyang University ERICA, where I earned both my Bachelor's and Master's degrees. During my Master's program, I was fortunate to be guided by Prof. JeaKweon Han, and my research was primarily focused on humanoid perception.
 
 After completing my academic journey at Hanyang University, I joined the Humanoid Robotics Lab at the Korea Institute of Science and Technology (KIST) in 2023. Here, I serve as a research intern under the mentorship of Dr. Oh YongHwan. My current research is centered on the control and locomotion of wheel-legged humanoid robots. The aim is to develop robots that not only mimic human movement but also adapt to various terrains and situations, thereby expanding their utility in real-world applications.
 
 The work I am engaged in is not just about creating robots that move; it's about understanding the intricate dance between control mechanisms and dynamic motion. I am committed to pushing the boundaries of what humanoid robots can achieve, ensuring they can be both versatile and reliable companions for humans. -->
+
+
 
 
 

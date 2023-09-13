@@ -7,7 +7,7 @@
       "startDate": "2023-03-01",
       "summary": "Research focuses on developing optimization-based dynamic locomotion to actively find the next foot placement and optimal step timing for a point-foot biped. ",
       "highlights": [
-        "Optimization-based Footplacement Planning","Whole-Body Control of Wheel-legged Humanoid Robot"
+        "Optimization-based Footplacement Planning", "Whole-Body Control of Wheel-legged Humanoid Robot"
       ]
     },
     {
@@ -27,10 +27,10 @@
       "studyType": "Master of Science",
       "startDate": "2020-03-01",
       "endDate": "2022-08-17",
-      "score": "3.89/4.0",
-      "courses": [
-        "Modern Robotics", "PBL-based Robot Control"
-      ]
+      "score": "3.89/4.0"
+      // "courses": [
+      //   "Modern Robotics", "PBL-based Robot Control"
+      // ]
     },
     {
       "institution": "Hanyang University ERICA, Ansan, Republic of Korea",
@@ -43,18 +43,18 @@
     }    
   ],
   "awards": [
-    // {
-    //   "title": "RoboCup 2022 Bangkok Humanoid League",
-    //   "date": "2022-07",
-    //   "awarder": "RoboCup Federation",
-    //   "summary": "AdultSize Soccer Competition, 2nd Place."
-    // },
-    // {
-    //   "title": "RoboCup Korea Open 2020",
-    //   "date": "2020-09",
-    //   "awarder": "Korea Institute of Robotics & Technology Convergence",
-    //   "summary": "Humanoid AdultSize Soccer, 1st Place."
-    // }
+    {
+      "title": "RoboCup 2022 Bangkok Humanoid League",
+      "date": "2022-07",
+      "awarder": "RoboCup Federation",
+      "summary": "AdultSize Soccer Competition, 2nd Place."
+    },
+    {
+      "title": "RoboCup Korea Open 2020",
+      "date": "2020-09",
+      "awarder": "Korea Institute of Robotics & Technology Convergence",
+      "summary": "Humanoid AdultSize Soccer, 1st Place."
+    }
   ],
   "certificates": [],
   "publications": [],

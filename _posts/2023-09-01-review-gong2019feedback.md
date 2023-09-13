@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Feedback Control of a Cassie Bipedal Robot
+title: "[paper review] Feedback Control of a Cassie Bipedal Robot"
 date: 2022-12-12
-description: this is what included images could look like
+description: This paper focuses on feedback control for standing and walking using the methods of virtual constraints and gait libraries.
 tags: paper-review
 # categories: sample-posts
 thumbnail: assets/img/review/cassie/cassie.png
