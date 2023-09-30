@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  scp 명령어 사용법
+title:  "[tips] scp 명령어 사용법"
 date: 2022-06-15
 # description: this is what included images could look like
 tags: linux-tip scp
