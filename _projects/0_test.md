@@ -1,6 +1,6 @@
----
+<!-- ---
 layout: page
-title: "testdaddadㅇㅁㅇ"
+title: "UWB-based positioning (for logging)"
 description: UWB-based Wireless Positioning System.
 img: assets/img/balloon_drone/masan.gif
 importance: 3
@@ -197,4 +197,4 @@ category: robotics
 
 - The development of precise location measurement technology using UWB sensors was successful.
 - The technology can be applied to various fields such as drones, robots, and AR/VR.
-- The future direction is to improve the technology and expand its application to various fields.
+- The future direction is to improve the technology and expand its application to various fields. -->
