@@ -8,15 +8,12 @@ category: robotics
 # related_publications: einstein1956investigations, einstein1950meaning
 ---
 
-### Research Purpose
-* Development of a wheel-legged humanoid robot for proximity support services in a living space.
-* LQR, MPC-based Planner
-* Dynamic pointfoot locomotion
-
----
-
 ### Wheel-legged humanoid robot
-
+* Development of a wheel-legged humanoid robot for proximity support services in a living space.
+* Whole-body controller
+* Loco-manipulation
+* LQR & MPC-based Planner
+* Reactive Footstep Planning (DCM-based)
 <div class="row justify-content-center">
     <div style="width: 335px; margin-right: 10px; margin-top: 15px;">
             {% include figure.html path="assets/img/pointfoot_locomotion/mahru.png" title="example image" class="img-fluid rounded z-depth-1"  zoomable=true%}
