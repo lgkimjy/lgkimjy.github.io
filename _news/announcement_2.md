@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Paper submitted to **Humanoids'23** got accepted!
+Paper accepted to **IEEE-RAS Humanoids'23**!
