@@ -4,6 +4,6 @@ permalink: /cv/
 title: cv
 nav: true
 nav_order: 4
-cv_pdf: JunYoungKim_CV.pdf
+cv_pdf: JunYoungKim_CV(0620).pdf
 # description: This is a description of the page. You can modify it in 'pages/_cv.md'. You can also change or remove the top pdf download button.
 ---
