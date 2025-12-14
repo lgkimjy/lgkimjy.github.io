@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2016-01-15 07:59:00-0400
+date: 2025-8-15
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement with Markdown emoji! :sparkles: :smile:
+Joined **[HIER Lab](https://hier-robotics.github.io/)** @ **<font color='#CC0000'>NC State</font>**.
