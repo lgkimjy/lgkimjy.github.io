@@ -713,6 +713,14 @@ footer.sticky-bottom {
 }
 
 // Publications
+/* --- Fix BibTeX wrapping in publications --- */
+// this will clear syntax highlighting in bibtex
+.publications ol.bibliography li .bibtex pre,
+.publications ol.bibliography li .bibtex code {
+  white-space: pre;      /* keep newlines + allow wrapping */
+  overflow-wrap: anywhere;    /* wrap very long tokens */
+  word-break: break-word;     /* fallback */
+}
 
 .publications {
   margin-top: 2rem;
@@ -889,6 +897,12 @@ footer.sticky-bottom {
       border-color: var(--global-highlight-color);
     }
   }
+}
+
+// Make venue badge text readable in both light/dark mode - force white color
+.publications ol.bibliography li .abbr abbr,
+.publications ol.bibliography li .abbr abbr * {
+  color: var(--global-badge-text-color, #fff) !important;
 }
 
 // Rouge Color Customization
