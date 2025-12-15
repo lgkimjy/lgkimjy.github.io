@@ -9,6 +9,10 @@
   color: "#009f36"
 
 "IEEE Access":
-  color: "#002855"
-  # color: "#45b6fe"
-  #color: "#00629B"
+  url: https://ieeeaccess.ieee.org/
+  # color: "#002855"
+  color: "#00629B"
+
+"Humanoids 2023":
+  url: https://2023.ieee-humanoids.org/
+  # color: "#00629B"
