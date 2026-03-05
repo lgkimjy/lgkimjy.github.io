@@ -1,3 +1,16 @@
+# Venue badge colors
+#
+# Option 1 - Simple: one color for both themes (white text)
+#   color: "#00629B"
+#
+# Option 2 - Full control: specify bg & text per theme
+#   light:
+#     bg: "#FCCD04"
+#     text: "#000000"
+#   dark:
+#     bg: "#1c1c1d"   # dark theme background
+#     text: "#FCCD04"
+
 "AJP":
   url: https://aapt.scitation.org/journal/ajp
   color: "#00369f"
@@ -16,3 +29,12 @@
 "Humanoids 2023":
   url: https://2023.ieee-humanoids.org/
   # color: "#00629B"
+
+"IROS 2026":
+  url: https://2026.ieee-iros.org/
+  light:
+    bg: "#FCCD04"
+    text: "#000000"
+  dark:
+    bg: "#FCCD04"
+    text: "#000000"

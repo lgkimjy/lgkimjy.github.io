@@ -899,10 +899,33 @@ footer.sticky-bottom {
   }
 }
 
-// Make venue badge text readable in both light/dark mode - force white color
+// Venue badge text: white by default (for color-only badges)
 .publications ol.bibliography li .abbr abbr,
 .publications ol.bibliography li .abbr abbr * {
   color: var(--global-badge-text-color, #fff) !important;
+}
+
+// Theme-aware venue badges: use CSS vars from venues.yml (light/dark)
+.publications ol.bibliography li .abbr abbr.venue-badge-theme {
+  background-color: var(--venue-bg-light) !important;
+}
+.publications ol.bibliography li .abbr abbr.venue-badge-theme,
+.publications ol.bibliography li .abbr abbr.venue-badge-theme * {
+  color: var(--venue-text-light) !important;
+}
+.publications ol.bibliography li .abbr abbr.venue-badge-theme a {
+  color: var(--venue-text-light) !important;
+}
+
+html[data-theme="dark"] .publications ol.bibliography li .abbr abbr.venue-badge-theme {
+  background-color: var(--venue-bg-dark) !important;
+}
+html[data-theme="dark"] .publications ol.bibliography li .abbr abbr.venue-badge-theme,
+html[data-theme="dark"] .publications ol.bibliography li .abbr abbr.venue-badge-theme * {
+  color: var(--venue-text-dark) !important;
+}
+html[data-theme="dark"] .publications ol.bibliography li .abbr abbr.venue-badge-theme a {
+  color: var(--venue-text-dark) !important;
 }
 
 // Rouge Color Customization
