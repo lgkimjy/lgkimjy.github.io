@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle:  #<a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: #<a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:
   align: right
@@ -33,8 +33,6 @@ Prior to joining NCSU, I worked as a research scientist at the [<font color='ff7
 
 I earned my Master's degree in 2022 from Hanyang University, guided by Prof. [JeaKweon Han](https://sites.google.com/site/heroehslab/home?authuser=0). I also completed my Bachelor's degree in Robotics Engineering at Hanyang University ERICA Campus in 2020.
 
-
-
 <!-- <span style="
   text-decoration: underline;
   text-decoration-color: #CC0000;
@@ -55,7 +53,6 @@ I earned my Master's degree in 2022 from Hanyang University, guided by Prof. [Je
   whole-body loco-manipulation
 </span> -->
 
-
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
 Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
@@ -63,7 +60,7 @@ Put your address / P.O. box / other info right below your picture. You can also 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
  -->
 
-<!-- I am interested in legged robots, particularly in humanoid robots' whole-body control and dynamic locomotion planning. 
+<!-- I am interested in legged robots, particularly in humanoid robots' whole-body control and dynamic locomotion planning.
 
 I'm currently a full-time research intern at the <font color='ff7e55'>Humanoid Robotics Lab.</font> at the Korea Institute of Science and Technology (KIST), working under Dr. [Yonghwan Oh](https://scholar.google.com/citations?user=hEnok94AAAAJ&hl=ko&oi=ao). My current research is centered on the control and locomotion of wheel-legged humanoid robots. The aim is to develop robots that not only mimic human movement but also adapt to various terrains and situations, thereby expanding their utility in real-world applications.
 

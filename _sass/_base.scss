@@ -717,9 +717,9 @@ footer.sticky-bottom {
 // this will clear syntax highlighting in bibtex
 .publications ol.bibliography li .bibtex pre,
 .publications ol.bibliography li .bibtex code {
-  white-space: pre;      /* keep newlines + allow wrapping */
-  overflow-wrap: anywhere;    /* wrap very long tokens */
-  word-break: break-word;     /* fallback */
+  white-space: pre; /* keep newlines + allow wrapping */
+  overflow-wrap: anywhere; /* wrap very long tokens */
+  word-break: break-word; /* fallback */
 }
 
 .publications {
