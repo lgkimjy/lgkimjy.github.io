@@ -784,8 +784,18 @@ footer.sticky-bottom {
         }
       }
 
-      .title {
-        font-weight: bolder;
+      .title-row {
+        .title {
+          font-weight: bolder;
+          min-width: 0; /* allow title to shrink/wrap */
+        }
+        .scholar-badge-title {
+          flex-shrink: 0; /* keep badge on same line, don't shrink */
+          img {
+            height: 1.25rem;
+            vertical-align: middle;
+          }
+        }
       }
 
       .author {
