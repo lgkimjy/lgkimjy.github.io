@@ -1,175 +1,209 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="Nerfies: Deformable Neural Radiance Fields — Example project page (Nerfies style)">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Nerfies: Deformable Neural Radiance Fields — Example project page (Nerfies style)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+    <title>Nerfies: Deformable Neural Radiance Fields</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/css/bulma.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/css/index.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/css/code.css">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/css/fontawesome.all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/css/index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/css/code.css" />
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/js/fontawesome.all.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/js/bulma-carousel.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/js/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/js/copy-button.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/js/fontawesome.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/js/bulma-carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ai4co/research-project-page-template@main/static/js/copy-button.js"></script>
 
-  <style>
-    .nerfies-hero { padding: 2rem 1.5rem; }
-    .nerfies-tagline { font-size: 1.5rem; margin: 2rem 0; color: #363636; }
-  </style>
-</head>
-<body>
-
-  <section class="hero nerfies-hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
-            <div class="is-size-5 publication-authors">
-              <a href="https://keunhong.com/" target="_blank">Keunhong Park</a><sup>1</sup>,
-              <a href="https://utkarshsinha.com/" target="_blank">Utkarsh Sinha</a><sup>2</sup>,
-              <a href="https://jonbarron.info/" target="_blank">Jonathan T. Barron</a><sup>2</sup>,
-              <a href="http://sofienbouaziz.com/" target="_blank">Sofien Bouaziz</a><sup>2</sup>,
-              <a href="https://www.danbgoldman.com/" target="_blank">Dan B Goldman</a><sup>2</sup>,
-              <a href="https://homes.cs.washington.edu/~seitz/" target="_blank">Steven M. Seitz</a><sup>1,2</sup>,
-              <a href="http://www.ricardomartinbrualla.com/" target="_blank">Ricardo Martin-Brualla</a><sup>2</sup>
-            </div>
-            <div class="is-size-5 publication-authors">
-              <sup>1</sup>University of Washington, <sup>2</sup>Google Research
-            </div>
-            <div class="publication-links mt-4">
-              <a href="https://arxiv.org/pdf/2011.12948" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
-              </a>
-              <a href="https://arxiv.org/abs/2011.12948" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
-              </a>
-              <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon"><i class="fas fa-video"></i></span><span>Video</span>
-              </a>
-              <a href="https://github.com/google/nerfies" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
-              </a>
-              <a href="https://github.com/google/nerfies/releases/tag/0.1" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon"><i class="fas fa-database"></i></span><span>Data</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tagline (Nerfies style) -->
-  <section class="section pt-0">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered nerfies-tagline">
-        Nerfies turns selfie videos from your phone into free-viewpoint portraits.
-      </h2>
-    </div>
-  </section>
-
-  <!-- Video at top -->
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
+    <style>
+      .nerfies-hero {
+        padding: 2rem 1.5rem;
+      }
+      .nerfies-tagline {
+        font-size: 1.5rem;
+        margin: 2rem 0;
+        color: #363636;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero nerfies-hero">
       <div class="hero-body">
-        <h2 class="title is-4 has-text-centered mb-4">Video</h2>
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <div class="publication-video">
-              <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%; aspect-ratio:16/9; border-radius:8px;"></iframe>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+              <div class="is-size-5 publication-authors">
+                <a href="https://keunhong.com/" target="_blank">Keunhong Park</a><sup>1</sup>,
+                <a href="https://utkarshsinha.com/" target="_blank">Utkarsh Sinha</a><sup>2</sup>,
+                <a href="https://jonbarron.info/" target="_blank">Jonathan T. Barron</a><sup>2</sup>,
+                <a href="http://sofienbouaziz.com/" target="_blank">Sofien Bouaziz</a><sup>2</sup>,
+                <a href="https://www.danbgoldman.com/" target="_blank">Dan B Goldman</a><sup>2</sup>,
+                <a href="https://homes.cs.washington.edu/~seitz/" target="_blank">Steven M. Seitz</a><sup>1,2</sup>,
+                <a href="http://www.ricardomartinbrualla.com/" target="_blank">Ricardo Martin-Brualla</a><sup>2</sup>
+              </div>
+              <div class="is-size-5 publication-authors"><sup>1</sup>University of Washington, <sup>2</sup>Google Research</div>
+              <div class="publication-links mt-4">
+                <a href="https://arxiv.org/pdf/2011.12948" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+                </a>
+                <a href="https://arxiv.org/abs/2011.12948" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+                </a>
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-video"></i></span><span>Video</span>
+                </a>
+                <a href="https://github.com/google/nerfies" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+                </a>
+                <a
+                  href="https://github.com/google/nerfies/releases/tag/0.1"
+                  target="_blank"
+                  class="external-link button is-normal is-rounded is-dark"
+                >
+                  <span class="icon"><i class="fas fa-database"></i></span><span>Data</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Abstract -->
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">Abstract</h2>
-      <div class="content has-text-justified">
-        <p>
-          We present the first method capable of photorealistically reconstructing a non-rigidly deforming scene using photos/videos captured casually from mobile phones.
-        </p>
-        <p>
-          Our approach augments neural radiance fields (NeRF) by optimizing an additional continuous volumetric deformation field that warps each observed point into a canonical 5D NeRF. We observe that these NeRF-like deformation fields are prone to local minima, and propose a coarse-to-fine optimization method for coordinate-based models that allows for more robust optimization. By adapting principles from geometry processing and physical simulation to NeRF-like models, we propose an elastic regularization of the deformation field that further improves robustness.
-        </p>
-        <p>
-          We show that Nerfies can turn casually captured selfie photos/videos into deformable NeRF models that allow for photorealistic renderings of the subject from arbitrary viewpoints, which we dub <em>"nerfies"</em>. We evaluate our method by collecting data using a rig with two mobile phones that take time-synchronized photos, yielding train/validation images of the same pose at different viewpoints. We show that our method faithfully reconstructs non-rigidly deforming scenes and reproduces unseen views with high fidelity.
-        </p>
+    <!-- Tagline (Nerfies style) -->
+    <section class="section pt-0">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered nerfies-tagline">Nerfies turns selfie videos from your phone into free-viewpoint portraits.</h2>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Visual Effects -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">Visual Effects</h2>
-      <p class="content">
-        Using <em>nerfies</em> you can create fun visual effects. This Dolly zoom effect would be impossible without nerfies since it would require going through a wall.
-      </p>
-      <div class="has-text-centered">
-        <img src="./static/images/teaser.svg" alt="Visual effect" style="max-width:100%; border-radius:8px;">
+    <!-- Video at top -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <h2 class="title is-4 has-text-centered mb-4">Video</h2>
+          <div class="columns is-centered">
+            <div class="column is-four-fifths">
+              <div class="publication-video">
+                <iframe
+                  src="https://www.youtube.com/embed/MrKrnHhk8IA"
+                  frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                  style="width: 100%; aspect-ratio: 16/9; border-radius: 8px"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Matting -->
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">Matting</h2>
-      <p class="content">
-        As a byproduct of our method, we can also solve the matting problem by ignoring samples that fall outside of a bounding box during rendering.
-      </p>
-      <div class="has-text-centered">
-        <img src="./static/images/fig1.svg" alt="Matting" style="max-width:100%; border-radius:8px;">
+    <!-- Abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present the first method capable of photorealistically reconstructing a non-rigidly deforming scene using photos/videos captured
+            casually from mobile phones.
+          </p>
+          <p>
+            Our approach augments neural radiance fields (NeRF) by optimizing an additional continuous volumetric deformation field that warps each
+            observed point into a canonical 5D NeRF. We observe that these NeRF-like deformation fields are prone to local minima, and propose a
+            coarse-to-fine optimization method for coordinate-based models that allows for more robust optimization. By adapting principles from
+            geometry processing and physical simulation to NeRF-like models, we propose an elastic regularization of the deformation field that
+            further improves robustness.
+          </p>
+          <p>
+            We show that Nerfies can turn casually captured selfie photos/videos into deformable NeRF models that allow for photorealistic renderings
+            of the subject from arbitrary viewpoints, which we dub <em>"nerfies"</em>. We evaluate our method by collecting data using a rig with two
+            mobile phones that take time-synchronized photos, yielding train/validation images of the same pose at different viewpoints. We show that
+            our method faithfully reconstructs non-rigidly deforming scenes and reproduces unseen views with high fidelity.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- BibTeX -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title is-3">BibTeX</h2>
-      <div class="code-container">
-        <pre><code class="code-content language-text">@article{park2021nerfies,
+    <!-- Visual Effects -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Visual Effects</h2>
+        <p class="content">
+          Using <em>nerfies</em> you can create fun visual effects. This Dolly zoom effect would be impossible without nerfies since it would require
+          going through a wall.
+        </p>
+        <div class="has-text-centered">
+          <img src="./static/images/teaser.svg" alt="Visual effect" style="max-width: 100%; border-radius: 8px" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Matting -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Matting</h2>
+        <p class="content">
+          As a byproduct of our method, we can also solve the matting problem by ignoring samples that fall outside of a bounding box during
+          rendering.
+        </p>
+        <div class="has-text-centered">
+          <img src="./static/images/fig1.svg" alt="Matting" style="max-width: 100%; border-radius: 8px" />
+        </div>
+      </div>
+    </section>
+
+    <!-- BibTeX -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3">BibTeX</h2>
+        <div class="code-container">
+          <pre><code class="code-content language-text">@article{park2021nerfies,
   author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
   title     = {Nerfies: Deformable Neural Radiance Fields},
   journal   = {ICCV},
   year      = {2021},
 }</code></pre>
-        <button class="copy-button" aria-label="Copy to clipboard">
-          <svg class="copy-icon" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg>
-          <svg class="checkmark-icon" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>
-        </button>
-        <div class="copy-tooltip">Copy to clipboard</div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <p>
-            Example page based on <a href="https://nerfies.github.io/" target="_blank">Nerfies project</a>.
-            This website is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
-          </p>
+          <button class="copy-button" aria-label="Copy to clipboard">
+            <svg class="copy-icon" viewBox="0 0 16 16">
+              <path
+                fill-rule="evenodd"
+                d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+              ></path>
+            </svg>
+            <svg class="checkmark-icon" viewBox="0 0 16 16">
+              <path
+                fill-rule="evenodd"
+                d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"
+              ></path>
+            </svg>
+          </button>
+          <div class="copy-tooltip">Copy to clipboard</div>
         </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-</body>
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <p>
+              Example page based on <a href="https://nerfies.github.io/" target="_blank">Nerfies project</a>. This website is licensed under
+              <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
