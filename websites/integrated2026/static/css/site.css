@@ -1,16 +1,16 @@
 :root {
-  --bg: #f7f3ec;
-  --paper: #fffdfa;
+  --bg: #ffffff;
+  --paper: #ffffff;
   --ink: #171717;
-  --soft-ink: #35312c;
-  --muted: #67605a;
-  --line: #dfd6ca;
+  --soft-ink: #2f2d2a;
+  --muted: #615c56;
+  --line: #e7dfd6;
   --accent: #b73426;
   --accent-dark: #7e1f17;
   --green: #116a56;
   --blue: #1f669a;
   --amber: #c78917;
-  --shadow: 0 18px 46px rgba(48, 36, 24, 0.12);
+  --shadow: 0 18px 46px rgba(36, 32, 28, 0.1);
   --content-width: 1160px;
 }
 
@@ -101,16 +101,16 @@ p {
 }
 
 .hero-video-shell {
-  background: #12100f;
-  border: 1px solid #2a2621;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
+  background: #ffffff;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
   overflow: hidden;
 }
 
 .hero-video-shell video {
   aspect-ratio: 16 / 9;
-  background: #12100f;
+  background: #ffffff;
   object-fit: contain;
   width: 100%;
 }
