@@ -507,6 +507,28 @@ footer.fixed-bottom {
   }
 }
 
+.visitor-count-wrap {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.visitor-count {
+  color: var(--global-text-color-light);
+  font-size: 0.85rem;
+  white-space: nowrap;
+
+  .ti {
+    font-size: 0.85em;
+    margin-right: 0.15em;
+    opacity: 0.7;
+    vertical-align: -0.05em;
+  }
+}
+
+.visitor-count-sep {
+  opacity: 0.45;
+}
+
 footer.sticky-bottom {
   border-top: 1px solid var(--global-divider-color);
   padding-top: 40px;

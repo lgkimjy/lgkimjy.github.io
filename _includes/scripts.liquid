@@ -247,6 +247,14 @@
   <script defer src="{{ '/assets/js/open-panel-analytics-setup.js' | relative_url }}"></script>
   <script async defer src="https://openpanel.dev/op1.js"></script>
 {% endif %}
+{% if site.enable_visitor_counter and site.goatcounter_code %}
+  <script
+    data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count"
+    async
+    src="//gc.zgo.at/count.js"
+  ></script>
+  <script defer src="{{ '/assets/js/visitor-counter-setup.js' | relative_url }}"></script>
+{% endif %}
 
 {% if site.enable_progressbar %}
   <!-- Scrolling Progress Bar -->

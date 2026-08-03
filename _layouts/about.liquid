@@ -70,6 +70,10 @@ layout: default
         <div class="contact-icons">{% include social.liquid %}</div>
 
         <div class="contact-note">{{ site.contact_note }}</div>
+
+        {% if site.enable_visitor_counter and site.goatcounter_code %}
+          <div class="visitor-count-wrap">{% include visitor_counter.liquid %}</div>
+        {% endif %}
       </div>
     {% endif %}
 
