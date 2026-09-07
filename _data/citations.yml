@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-04-22'
+  last_updated: '2026-09-07'
 papers:
   zs124LwAAAAJ:4TOpqqG69KYC:
     citations: 3
@@ -10,6 +10,6 @@ papers:
     title: Enhanced Localization for Bipedal Humanoid Robots in Dynamic and Noisy Environments
     year: '2025'
   zs124LwAAAAJ:_kc_bZDykSQC:
-    citations: 6
+    citations: 9
     title: High-speed and enhanced motion control for a wheeled-legged humanoid robot using a two-wheeled inverted pendulum with roll joint
     year: '2025'
