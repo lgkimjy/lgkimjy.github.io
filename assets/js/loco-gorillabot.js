@@ -196,9 +196,7 @@
 
     // Rear up when close to the target (not while running); stand taller for higher targets.
     // Looser exit avoids flicker
-    const near =
-      !holding &&
-      (bot.rear > 0.5 ? Math.abs(xDes - bot.x) < 45 : Math.abs(xDes - bot.x) < 18 && Math.abs(bot.v) < 30);
+    const near = !holding && (bot.rear > 0.5 ? Math.abs(xDes - bot.x) < 45 : Math.abs(xDes - bot.x) < 18 && Math.abs(bot.v) < 30);
     const rearDes = near ? clamp((groundY - target.y - 30) / 70, 0.15, 1) : 0;
     bot.rear += (rearDes - bot.rear) * Math.min(1, dt * 4);
     // Reaching is separate from standing: low targets get a three-limbed reach
@@ -400,7 +398,10 @@
     }
 
     // Red armor plates on shoulder and hip, like the lab logo
-    for (const [x, y, r] of [[sx, sy, 6.5], [hx, hy, 5]]) {
+    for (const [x, y, r] of [
+      [sx, sy, 6.5],
+      [hx, hy, 5],
+    ]) {
       ctx.fillStyle = ARMOR;
       ctx.beginPath();
       ctx.arc(x, y, r, 0, Math.PI * 2);
@@ -429,15 +430,7 @@
     if (readout) {
       const err = Math.hypot(nearArm.ex - target.x, nearArm.ey - target.y);
       const v = leap.air ? leap.vx : bot.v;
-      const mode = leap.air
-        ? "leap"
-        : bot.run > 0.5
-          ? "running"
-          : bot.rear > 0.5
-            ? "biped"
-            : bot.reach > 0.5
-              ? "tripod"
-              : "quadruped";
+      const mode = leap.air ? "leap" : bot.run > 0.5 ? "running" : bot.rear > 0.5 ? "biped" : bot.reach > 0.5 ? "tripod" : "quadruped";
       readout.textContent = `‖e‖ ${err.toFixed(1)} px · v ${(v / 100).toFixed(2)} m/s · ${mode}`;
     }
   }

@@ -297,7 +297,11 @@
     }
 
     // Joints
-    for (const [x, y] of [[hx, hy], [sx, sy], [arm.jx, arm.jy]]) {
+    for (const [x, y] of [
+      [hx, hy],
+      [sx, sy],
+      [arm.jx, arm.jy],
+    ]) {
       ctx.beginPath();
       ctx.arc(x, y, 2.6, 0, Math.PI * 2);
       ctx.fill();
