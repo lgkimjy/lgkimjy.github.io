@@ -70,6 +70,7 @@ I earned my Master's degree in 2022 from Hanyang University, guided by Prof. [Je
 <script src="{{ '/assets/js/loco-bot.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/loco-wheelbo.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/loco-gorillabot.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/loco-brachiator.js' | relative_url }}" defer></script>
 
 <!-- <span style="
   text-decoration: underline;
