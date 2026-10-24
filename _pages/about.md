@@ -33,6 +33,44 @@ Prior to joining NCSU, I worked as a research scientist at the [<font color='ff7
 
 I earned my Master's degree in 2022 from Hanyang University, guided by Prof. [JeaKweon Han](https://sites.google.com/site/heroehslab/home?authuser=0). I also completed my Bachelor's degree in Robotics Engineering at Hanyang University ERICA Campus in 2020.
 
+<div style="clear: both; margin: 1.5rem 0 3rem; touch-action: pan-y;">
+  <canvas id="loco-bot" data-caption="click to hop." aria-label="A small walking humanoid that reaches for your cursor" role="img" style="display: block; cursor: pointer;"></canvas>
+  <canvas id="loco-wheelbo" data-caption="click to hop." aria-label="A small wheeled-legged robot that reaches for your cursor" role="img" style="display: none; cursor: pointer;"></canvas>
+  <canvas id="loco-gorillabot" data-caption="hold to run, let go to leap." aria-label="A small robot gorilla, the HIER Lab mascot, that knuckle-walks and stands up to reach your cursor" role="img" style="display: none; cursor: pointer;"></canvas>
+  <div style="display: flow-root; font-size: 0.75rem; color: var(--global-text-color-light);">
+    <span style="color: inherit;">point to steer, <span id="loco-caption" style="color: inherit;">click to hop.</span>
+      <a href="#" data-loco="loco-bot">legs</a> &middot; <a href="#" data-loco="loco-wheelbo">wheels</a> &middot; <a href="#" data-loco="loco-gorillabot">gorilla</a></span>
+    <span id="loco-bot-readout" style="float: right; margin-left: 1rem; color: inherit; font-family: monospace;"></span>
+    <span id="loco-wheelbo-readout" style="float: right; margin-left: 1rem; color: inherit; font-family: monospace; display: none;"></span>
+    <span id="loco-gorillabot-readout" style="float: right; margin-left: 1rem; color: inherit; font-family: monospace; display: none;"></span>
+  </div>
+</div>
+<script>
+  (function () {
+    const links = document.querySelectorAll("[data-loco]");
+    function show(id) {
+      for (const a of links) {
+        const on = a.dataset.loco === id;
+        document.getElementById(a.dataset.loco).style.display = on ? "block" : "none";
+        document.getElementById(a.dataset.loco + "-readout").style.display = on ? "" : "none";
+        a.style.fontWeight = on ? "700" : "400";
+      }
+      document.getElementById("loco-caption").textContent = document.getElementById(id).dataset.caption;
+      window.dispatchEvent(new Event("resize"));
+    }
+    for (const a of links) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        show(a.dataset.loco);
+      });
+    }
+    show("loco-bot");
+  })();
+</script>
+<script src="{{ '/assets/js/loco-bot.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/loco-wheelbo.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/loco-gorillabot.js' | relative_url }}" defer></script>
+
 <!-- <span style="
   text-decoration: underline;
   text-decoration-color: #CC0000;
