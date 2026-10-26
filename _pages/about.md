@@ -33,6 +33,11 @@ Prior to joining NCSU, I worked as a research scientist at the [<font color='ff7
 
 I earned my Master's degree in 2022 from Hanyang University, guided by Prof. [JeaKweon Han](https://sites.google.com/site/heroehslab/home?authuser=0). I also completed my Bachelor's degree in Robotics Engineering at Hanyang University ERICA Campus in 2020.
 
+<div style="clear: both; margin-top: 1.5rem;">
+  <canvas id="loco-journey" aria-label="A small robot walking the path from Hanyang University to KIST and across the Pacific to NC State" role="img" style="display: block;"></canvas>
+</div>
+
+<!-- Temporarily hidden: interactive legs / wheels / gorilla playground.
 <div style="clear: both; margin: 1.5rem 0 3rem; touch-action: pan-y;">
   <canvas id="loco-bot" data-caption="click to hop." aria-label="A small walking humanoid that reaches for your cursor" role="img" style="display: block; cursor: pointer;"></canvas>
   <canvas id="loco-wheelbo" data-caption="click to hop." aria-label="A small wheeled-legged robot that reaches for your cursor" role="img" style="display: none; cursor: pointer;"></canvas>
@@ -64,13 +69,19 @@ I earned my Master's degree in 2022 from Hanyang University, guided by Prof. [Je
         show(a.dataset.loco);
       });
     }
+    window.locoShow = show;
     show("loco-bot");
   })();
 </script>
+-->
+<script src="{{ '/assets/js/loco-holiday.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/loco-bot.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/loco-wheelbo.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/loco-gorillabot.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/loco-brachiator.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/loco-mail.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/loco-papers.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/loco-journey.js' | relative_url }}" defer></script>
 
 <!-- <span style="
   text-decoration: underline;

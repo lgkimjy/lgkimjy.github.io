@@ -257,6 +257,7 @@
     ctx.beginPath();
     ctx.arc(x + (gx / gn) * 4, y + (gy / gn) * 4, 2.2, 0, Math.PI * 2);
     ctx.fill();
+    window.locoHoliday && window.locoHoliday.decorate(ctx, x, y, 10, bot.dir, performance.now());
   }
 
   function draw(now) {

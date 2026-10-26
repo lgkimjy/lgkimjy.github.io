@@ -36,6 +36,7 @@
   let lastStep = 1;
   const target = { x: 0, y: 0 };
   let pointerInside = false;
+  let demo = null;
   let visible = true;
   let last = performance.now();
 
@@ -122,7 +123,12 @@
 
   function step(dt, now) {
     // Wander on a slow Lissajous path while the pointer is away, gliding the target onto it
-    if (!pointerInside) {
+    // Paper demo (loco-papers.js): stand and look from one goal to the other while localizing
+    if (demo && now < demo.until) {
+      const t = (now - demo.start) / 1000;
+      target.x = clamp(bot.x + 0.6 * REACH * Math.sin(t * 1.6), 8, W - 8);
+      target.y = H * 0.4;
+    } else if (!pointerInside) {
       const t = now / 1000;
       const k = Math.min(1, dt * 2);
       target.x += (W * (0.5 + 0.38 * Math.sin(t * 0.35)) - target.x) * k;
@@ -223,6 +229,32 @@
     ctx.stroke();
     ctx.setLineDash([]);
 
+    // Goals at both ends of the field, boxed as detected landmarks
+    const demoOn = demo && now < demo.until;
+    if (demoOn) {
+      const t = (now - demo.start) / 1000;
+      for (const gx of [W * 0.06, W * 0.94]) {
+        ctx.strokeStyle = c.ink;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(gx - 14, groundY);
+        ctx.lineTo(gx - 14, groundY - 40);
+        ctx.lineTo(gx + 14, groundY - 40);
+        ctx.lineTo(gx + 14, groundY);
+        ctx.stroke();
+        if (t > 0.4) {
+          ctx.strokeStyle = c.accent;
+          ctx.lineWidth = 1.5;
+          ctx.setLineDash([3, 3]);
+          ctx.strokeRect(gx - 20, groundY - 46, 40, 50);
+          ctx.setLineDash([]);
+          ctx.fillStyle = c.accent;
+          ctx.font = "9px monospace";
+          ctx.fillText("goal", gx - 20, groundY - 50);
+        }
+      }
+    }
+
     const hx = bot.x;
     const hy = groundY - bot.hipH + bot.hopY;
     const sx = hx + Math.sin(bot.pitch) * TORSO;
@@ -279,6 +311,7 @@
     ctx.beginPath();
     ctx.arc(headX + (gx / gn) * 4.5, headY + (gy / gn) * 4.5, 2.2, 0, Math.PI * 2);
     ctx.fill();
+    window.locoHoliday && window.locoHoliday.decorate(ctx, headX, headY, HEAD_R, bot.dir, now);
 
     // Reaching arm and a two-finger gripper that closes on contact
     ctx.beginPath();
@@ -307,9 +340,35 @@
       ctx.fill();
     }
 
+    // aMCL particle cloud converging on the robot, with a shrinking uncertainty ellipse
+    if (demoOn) {
+      const t = (now - demo.start) / 1000;
+      const k = Math.min(1, t / 2.5);
+      const conv = k * k * (3 - 2 * k);
+      const spread = 40 * (1 - conv) + 4;
+      ctx.fillStyle = c.accent;
+      ctx.globalAlpha = 0.7;
+      for (const pt of demo.particles) {
+        const x = pt.x + (headX - pt.x) * conv + Math.cos(pt.j + t * 3) * spread * 0.15;
+        const y = pt.y + (headY - pt.y) * conv + Math.sin(pt.j * 1.7 + t * 3) * spread * 0.15;
+        ctx.beginPath();
+        ctx.arc(x, y, 1.8, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+      if (conv > 0.6) {
+        ctx.strokeStyle = c.accent;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.ellipse(headX, headY, HEAD_R + spread, HEAD_R * 0.6 + spread * 0.5, 0, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+    }
+
     if (readout) {
       const err = Math.hypot(arm.ex - target.x, arm.ey - target.y);
-      readout.textContent = `‖e‖ ${err.toFixed(1)} px · v ${(bot.v / 100).toFixed(2)} m/s · steps ${bot.steps}`;
+      const tag = demoOn ? " · demo: aMCL localization (Humanoids 2023)" : "";
+      readout.textContent = `‖e‖ ${err.toFixed(1)} px · v ${(bot.v / 100).toFixed(2)} m/s · steps ${bot.steps}${tag}`;
     }
   }
 
@@ -332,6 +391,15 @@
   }
 
   window.addEventListener("pointermove", onPointer, { passive: true });
+  window.addEventListener("loco-demo", (e) => {
+    if (e.detail !== "amcl") return;
+    // Particles start spread over the field and collapse onto the robot's true pose
+    demo = {
+      start: performance.now(),
+      until: performance.now() + 4500,
+      particles: Array.from({ length: 70 }, () => ({ x: Math.random() * W, y: 20 + Math.random() * (groundY - 30), j: Math.random() * 6.28 })),
+    };
+  });
   document.addEventListener("mouseout", (e) => {
     if (!e.relatedTarget) pointerInside = false;
   });

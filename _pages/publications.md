@@ -18,3 +18,6 @@ nav_order: 3
 {% bibliography %}
 
 </div>
+
+<script src="{{ '/assets/js/loco-holiday.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/loco-stones.js' | relative_url }}" defer></script>

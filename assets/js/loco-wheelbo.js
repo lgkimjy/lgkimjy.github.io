@@ -25,6 +25,7 @@
   const bot = { x: 0, v: 0, a: 0, pitch: 0, legH: 50, hopY: 0, hopV: 0, dir: 1 };
   const target = { x: 0, y: 0 };
   let pointerInside = false;
+  let demo = null;
   let visible = true;
   let last = performance.now();
 
@@ -85,7 +86,12 @@
 
   function step(dt, now) {
     // Wander on a slow Lissajous path while the pointer is away, gliding the target onto it
-    if (!pointerInside) {
+    // Paper demo (loco-papers.js): a fast back-and-forth run, leaning into every reversal
+    if (demo && now < demo.until) {
+      const t = (now - demo.start) / 1000;
+      target.x = W * (0.5 + 0.42 * Math.sin(t * 2.4));
+      target.y = H * 0.45;
+    } else if (!pointerInside) {
       const t = now / 1000;
       const k = Math.min(1, dt * 2);
       target.x += (W * (0.5 + 0.38 * Math.sin(t * 0.45)) - target.x) * k;
@@ -139,6 +145,20 @@
     ctx.lineTo(W, groundY + 0.5);
     ctx.stroke();
     ctx.setLineDash([]);
+
+    // Cones for the high-speed run
+    if (demo && now < demo.until) {
+      ctx.fillStyle = "#f97316";
+      for (let i = 1; i < 6; i++) {
+        const x = (W * i) / 6;
+        ctx.beginPath();
+        ctx.moveTo(x - 6, groundY);
+        ctx.lineTo(x, groundY - 16);
+        ctx.lineTo(x + 6, groundY);
+        ctx.closePath();
+        ctx.fill();
+      }
+    }
 
     const wx = bot.x;
     const wy = groundY - WHEEL_R + bot.hopY;
@@ -206,6 +226,7 @@
     ctx.beginPath();
     ctx.arc(headX + (gx / gn) * 4.5, headY + (gy / gn) * 4.5, 2.2, 0, Math.PI * 2);
     ctx.fill();
+    window.locoHoliday && window.locoHoliday.decorate(ctx, headX, headY, HEAD_R, bot.dir, now);
 
     // Reaching arm and a two-finger gripper that closes on contact
     ctx.beginPath();
@@ -237,7 +258,8 @@
 
     if (readout) {
       const err = Math.hypot(arm.ex - target.x, arm.ey - target.y);
-      readout.textContent = `‖e‖ ${err.toFixed(1)} px · v ${(bot.v / 100).toFixed(2)} m/s · θ ${((bot.pitch * 180) / Math.PI).toFixed(1)}°`;
+      const tag = demo && now < demo.until ? " · demo: high-speed run (IEEE Access 2025)" : "";
+      readout.textContent = `‖e‖ ${err.toFixed(1)} px · v ${(bot.v / 100).toFixed(2)} m/s · θ ${((bot.pitch * 180) / Math.PI).toFixed(1)}°${tag}`;
     }
   }
 
@@ -260,6 +282,9 @@
   }
 
   window.addEventListener("pointermove", onPointer, { passive: true });
+  window.addEventListener("loco-demo", (e) => {
+    if (e.detail === "speed") demo = { start: performance.now(), until: performance.now() + 4500 };
+  });
   document.addEventListener("mouseout", (e) => {
     if (!e.relatedTarget) pointerInside = false;
   });

@@ -207,6 +207,7 @@
     ctx.beginPath();
     ctx.arc(headX + d * 2, headY - 0.5, 1.3, 0, Math.PI * 2);
     ctx.fill();
+    window.locoHoliday && window.locoHoliday.decorate(ctx, headX, headY, HEAD_R, d, now);
   }
 
   function loop(now) {
