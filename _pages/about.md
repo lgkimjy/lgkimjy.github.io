@@ -33,7 +33,7 @@ Prior to joining NCSU, I worked as a research scientist at the [<font color='ff7
 
 I earned my Master's degree in 2022 from Hanyang University, guided by Prof. [JeaKweon Han](https://sites.google.com/site/heroehslab/home?authuser=0). I also completed my Bachelor's degree in Robotics Engineering at Hanyang University ERICA Campus in 2020.
 
-<div style="clear: both; margin-top: 1.5rem;">
+<div style="clear: both; margin: 1.5rem 0 2rem;">
   <canvas id="loco-journey" aria-label="A small robot walking the path from Hanyang University to KIST and across the Pacific to NC State" role="img" style="display: block;"></canvas>
 </div>
 
