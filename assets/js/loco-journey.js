@@ -1616,6 +1616,53 @@
     const hyu = STOPS[0].at * W;
     const kist = STOPS[1].at * W;
     const hyuCenter = lerp(hyu, kist, 0.5);
+    const mahruX = lerp(kist, SHORE_KR * W, 0.5);
+
+    // Props identify the research chapter without adding more labels: high-speed course cones
+    // around MAHRU and a small tabletop manipulation scene beside G1.
+    ctx.save();
+    ctx.globalAlpha = lineupAlpha;
+    ctx.fillStyle = "#f97316";
+    for (const x of [mahruX - 34, mahruX + 34]) {
+      ctx.beginPath();
+      ctx.moveTo(x - 5, ROAD_Y);
+      ctx.lineTo(x, ROAD_Y - 14);
+      ctx.lineTo(x + 5, ROAD_Y);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    const g1X = restingX(STOPS.length - 1);
+    const tableX = clamp(g1X - 54, SHORE_US * W + 30, g1X - 38);
+    const tableTop = ROAD_Y - 25;
+    ctx.strokeStyle = c.light;
+    ctx.fillStyle = c.light;
+    ctx.lineWidth = 1.5;
+    ctx.fillRect(tableX - 21, tableTop, 42, 3);
+    ctx.beginPath();
+    ctx.moveTo(tableX - 16, tableTop + 3);
+    ctx.lineTo(tableX - 13, ROAD_Y);
+    ctx.moveTo(tableX + 16, tableTop + 3);
+    ctx.lineTo(tableX + 13, ROAD_Y);
+    ctx.stroke();
+
+    // A small cardboard box with a visible top face, sized as a simple G1 manipulation target.
+    ctx.fillStyle = "#c58a52";
+    ctx.strokeStyle = c.ink;
+    ctx.lineWidth = 1;
+    ctx.fillRect(tableX - 7, tableTop - 11, 14, 11);
+    ctx.strokeRect(tableX - 7, tableTop - 11, 14, 11);
+    ctx.fillStyle = "#e0ad76";
+    ctx.beginPath();
+    ctx.moveTo(tableX - 7, tableTop - 11);
+    ctx.lineTo(tableX - 3, tableTop - 14);
+    ctx.lineTo(tableX + 9, tableTop - 14);
+    ctx.lineTo(tableX + 7, tableTop - 11);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.restore();
+
     if (W < 620) {
       drawAt("alice", hyuCenter);
     } else {
@@ -1626,7 +1673,7 @@
     }
 
     // MAHRU occupies its Korean chapter; the already-arrived G1 remains at NC State.
-    drawAt("wl", lerp(kist, SHORE_KR * W, 0.5));
+    drawAt("wl", mahruX);
 
     bot.dir = oldDir;
     bot.wave = oldWave;
