@@ -140,11 +140,11 @@
   const lerp = (a, b, t) => a + (b - a) * t;
   const smooth = (s) => s * s * (3 - 2 * s);
 
-  // At NC State, G1 takes one last step beyond the marker so the stop remains visible.
+  // At NC State, G1 stops just before the marker, leaving a small workspace on its right.
   function restingX(i) {
     const markerX = STOPS[i].at * W;
     if (i !== STOPS.length - 1) return markerX;
-    return Math.max(markerX, Math.min(markerX + 24, W - 18));
+    return Math.max(18, markerX - 30);
   }
 
   function twoLink(ax, ay, bx, by, l1, l2, bend) {
@@ -176,6 +176,7 @@
       const from = STOPS[k - dirStep];
       const to = STOPS[k];
       const tx = to.at * W;
+      const arrivalX = dirStep > 0 && k === STOPS.length - 1 ? restingX(k) : tx;
       if (from.robot === "alice" || to.robot === "alice") {
         // Hanyang <-> KIST: ALICE walks, dribbling the ball on the way out
         if (from.robot !== "alice") moves.push({ kind: "swap", robot: "alice", from: x, to: x });
@@ -193,7 +194,7 @@
           moves.push({ kind: "walk", robot: "wl", from: a, to: b });
           moves.push({ kind: "skate", robot: "wl", from: b, to: kr });
           moves.push({ kind: "leap", robot: "wl", next: "g1", from: kr, to: us });
-          moves.push({ kind: "walk", robot: "g1", from: us, to: tx });
+          moves.push({ kind: "walk", robot: "g1", from: us, to: arrivalX });
         } else {
           const a = lerp(kr, tx, 2 / 4.5);
           const b = lerp(kr, tx, 3.5 / 4.5);
@@ -203,11 +204,6 @@
           moves.push({ kind: "walk", robot: "wl", from: a, to: b });
           moves.push({ kind: "drive", robot: "wl", from: b, to: tx });
         }
-      }
-      let arrivalX = tx;
-      if (dirStep > 0 && k === STOPS.length - 1) {
-        arrivalX = restingX(k);
-        if (arrivalX > tx) moves.push({ kind: "walk", robot: "g1", from: tx, to: arrivalX });
       }
       moves.push({ kind: "pause", robot: to.robot, from: arrivalX, to: arrivalX, stop: k });
       x = arrivalX;
@@ -651,6 +647,16 @@
 
   function legFeet(m, air) {
     if (air) return [0, 1].map((i) => ({ x: bot.dir * (i ? -6 : 6), y: -26 * air }));
+    if (m && m.kind === "walk" && m.inPlace) {
+      return [0, 1].map((i) => {
+        const phase = (m.t / GAIT[m.robot].period + i * 0.5) % 1;
+        if (phase < 0.5) {
+          return { x: lerp(7, -7, smooth(phase * 2)), y: 0 };
+        }
+        const s = smooth((phase - 0.5) * 2);
+        return { x: lerp(-7, 7, s), y: -Math.sin(Math.PI * s) * 7 };
+      });
+    }
     if (m && m.kind === "walk" && m.robot === bot.robot) return plantedFeet(m);
     return [
       { x: 5, y: 0 },
@@ -1600,13 +1606,14 @@
 
     const idle = { kind: "idle", v: 0, gap: 0, hideFov: true };
     const drawAt = (kind, x) => {
+      const pose = kind === "wl" ? { kind: "walk", robot: "wl", t: now / 1000, inPlace: true, v: 0, gap: 0 } : idle;
       ctx.save();
       ctx.globalAlpha = lineupAlpha;
       ctx.translate(x, ROAD_Y);
       ctx.scale(SCALE, SCALE);
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
-      if (DRAW[kind]) DRAW[kind](c, idle, 0, now);
+      if (DRAW[kind]) DRAW[kind](c, pose, 0, now);
       else if (kind === "able") drawAble(c, idle, now);
       else if (kind === "erica") drawErica(c, idle, now);
       else drawEdie(c, idle, now);
@@ -1623,7 +1630,7 @@
     ctx.save();
     ctx.globalAlpha = lineupAlpha;
     ctx.fillStyle = "#f97316";
-    for (const x of [mahruX - 34, mahruX + 34]) {
+    for (const x of [mahruX + 34, mahruX + 54]) {
       ctx.beginPath();
       ctx.moveTo(x - 5, ROAD_Y);
       ctx.lineTo(x, ROAD_Y - 14);
@@ -1633,7 +1640,7 @@
     }
 
     const g1X = restingX(STOPS.length - 1);
-    const tableX = clamp(g1X - 54, SHORE_US * W + 30, g1X - 38);
+    const tableX = clamp(g1X + 54, g1X + 38, W - 22);
     const tableTop = ROAD_Y - 25;
     ctx.strokeStyle = c.light;
     ctx.fillStyle = c.light;
